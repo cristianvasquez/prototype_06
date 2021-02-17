@@ -5,4 +5,4 @@ layout: default
 
 This is the home page. It is just a markdown
 
-[Go to notes!](notes)
+[Go to notes!](notes/public-garden)
