@@ -1,0 +1,23 @@
+{
+  "name": "prototype_06",
+  "version": "1.0.0",
+  "description": "Jardin",
+  "main": ".eleventy.js",
+  "scripts": {
+    "start": "eleventy --input=src --output=output --serve",
+    "compile": "eleventy"
+  },
+  "author": "Cristian Vasquez",
+  "license": "MIT",
+  "devDependencies": {
+    "@11ty/eleventy": "^0.11.1",
+    "markdown-it": "^12.0.4",
+    "markdown-it-attrs": "^3.0.3",
+    "markdown-it-linkify-images": "^2.0.0",
+    "markdown-it-footnote": "^3.0.2",
+    "title-case": "^3.0.3"
+  },
+  "dependencies": {
+    "markdown-it-linkify-images": "^2.0.0"
+  }
+}
