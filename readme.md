@@ -1,7 +1,6 @@
 # El jardin
 
-
-## Installing
+This animal can publish several Obsidian vaults at once.
 
 1. Install the necessary dependencies
 
@@ -9,13 +8,13 @@
 npm install
 ```
 
-2. Mount your Obsidian vault in ./src/notes
+1. Create symbolic links for each Obsidian vault in ./src/notes
 
 ```sh
-ln -s source_vault ./src/notes
+ln -s source_vault ./src/notes/source_vault
 ```
 
-3. Run eleventy
+1. Run eleventy
 
 ```sh
 eleventy --output=output --serve
