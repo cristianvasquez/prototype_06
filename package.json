@@ -4,7 +4,7 @@
   "description": "Jardin",
   "main": ".eleventy.js",
   "scripts": {
-    "start": "eleventy --input=src --output=output --serve",
+    "start": "eleventy --output=output --serve",
     "compile": "eleventy"
   },
   "author": "Cristian Vasquez",
