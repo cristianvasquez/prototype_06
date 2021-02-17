@@ -1,7 +1,14 @@
 ---
 layout: default
 ---
+
+{% if summary %}
+    Summary: {{summary}}
+{% endif %}
+
+
 <article>
     {{content}}
 </article>
+
 {% include backlinks.html %}

@@ -19,3 +19,9 @@ ln -s source_vault ./src/notes/source_vault
 ```sh
 eleventy --output=output --serve
 ```
+
+## Caution
+
+Don't use:
+
+'?', '&', '#', in the titles. 
