@@ -1,20 +1,26 @@
 # El jardin
 
-This animal can publish several Obsidian vaults at once.
+This animal publishes Obsidian vaults using eleventy.
 
 1. Install the necessary dependencies
 
 ```sh
-npm install
+yarn install
 ```
 
 1. Create symbolic links for each Obsidian vault in ./src/notes
 
 ```sh
-ln -s source_vault ./src/notes/source_vault
+ln -s source_vault ./src/notes/public
 ```
 
 1. Run eleventy
+
+```sh
+yarn start
+```
+
+or
 
 ```sh
 eleventy --output=output --serve

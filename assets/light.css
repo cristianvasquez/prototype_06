@@ -1,0 +1,39 @@
+:root {
+  --grayDark: "#2d3748";
+  --white: "#fff";
+  --light: "#FBFDFE";
+  --dark: "#1a202c";
+  --text: "hsl(210, 17%, 85%)";
+  --textStrong: "hsl(210, 38%, 98%)";
+  --background: "hsl(285, 5%, 17%)";
+  --scrollbar: "hsl(285, 5%, 12%)";
+  --backgroundTransparent: "hsla(285, 5%, 17%, 0.72)";
+  --contentBg: "#383539";
+  --primary: "hsl(345, 100%, 69%)";
+  --primarySemiTransparent: "hsl(345, 100%, 79%, 0.3)";
+  --secondary: "#718096";
+  --muted: "hsl(210, 5%, 40%)";
+  --success: "#9ae6b4";
+  --info: "#63b3ed";
+  --warning: "#faf089";
+  --danger: "#feb2b2";
+  --navHover: "hsl(285, 5%, 13%)";
+  --codeBackground: "hsl(285,5%,17%)";
+  --codeHighlight: "hsl(285,5%,25%)";
+  --codeHighlightBorder: "hsl(285,5%,20%)";
+  --badgeBg: "hsl(285, 5%, 17%)";
+  --badgeBgHover: "hsl(285, 5%, 14%)";
+  --badgeBorder: "hsl(285, 5%, 12%)";
+  --input: "hsl(215, 5%, 65%)";
+  --code1: "hsl(345, 100%, 69%)";
+  --code2: "#fc9867";
+  --code3: "#ffd866";
+  --code4: "#a9dc76";
+  --code5: "#78dce8";
+  --code6: "#ab9df2";
+  --code7: "#999988";
+
+  --highlight: "hsl(50, 80%, 35%)";
+  --around: "#1aa6e9";
+  --crossed: "#e9522c";
+}

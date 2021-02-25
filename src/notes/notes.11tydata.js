@@ -70,7 +70,7 @@ module.exports = {
           outboundLinks.some((link) => caselessCompare(link, currentFileSlug))
         ) {
           // Construct preview for hovercards
-          let preview = noteContent.slice(0, 240);
+          let preview = noteContent.slice(0, 400);
 
           backlinks.push({
             url: otherNote.url,
