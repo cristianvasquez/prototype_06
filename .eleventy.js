@@ -9,13 +9,40 @@ module.exports = function (eleventyConfig) {
   // Map containing 'names' to the full paths of markdown (can be multiple)
   const names_paths = new Map();
 
+
+var Plugin = require('markdown-it-regexp')
+
+var wikilinksImages = Plugin(
+  /!\[\[([^\!\[\]\|\n\r]+)(\|([^\[\]\|\n\r]+))?\]\]/,
+
+  function(match, utils) {
+
+    var url ='/notes/public/_resources/'+match[1]
+
+    let alt = ''
+     if (match[2]){
+       alt = 'alt="' + caption + '"'
+     }
+
+    var caption = match[2]
+
+    return '' +
+      '<a href="' + url + '">' +
+        '<img src="' + url + '" ' + alt + '>' +
+      '</a>'
+  }
+)
+
   const md = markdownIt(markdownItOptions)
     .use(require("markdown-it-footnote"))
     .use(require("markdown-it-attrs"))
     .use(require("markdown-it-linkify-images"))
+    .use(wikilinksImages)
     .use(function (md) {
+
       // Recognize Mediawiki links ([[text]])
-      md.linkify.add("[[", {
+      md.linkify
+      .add("[[", {
         validate: /^\s?([^\[\]\|\n\r]+)(\|[^\[\]\|\n\r]+)?\s?\]\]/,
         normalize: (match) => {
           const parts = match.raw.slice(2, -2).split("|");
@@ -26,15 +53,31 @@ module.exports = function (eleventyConfig) {
 
           markdown_paths = names_paths[parts[0]];
 
+          // console.log(match)
+
           if (markdown_paths != undefined && markdown_paths.size == 1) {
             // one and only one markdown found
             match.url = `${markdown_paths.values().next().value.trim()}`;
           } else {
-            // It's a resource
-            match.url = `/notes/_resources/${parts[0].trim()}`;
+            // It's an unknown
+            match.url = ''
           }
-        },
+        }
       });
+
+      // Recognize Obsidian images (![[image]])
+      // md.linkify
+      // .add("![[", {
+      //   validate: /^\s?([^\!\[\]\|\n\r]+)(\|[^\[\]\|\n\r]+)?\s?\]\]/,
+      //   normalize: (match) => {
+      //     const parts = match.raw.slice(3, -2).split("|");
+      //     filename = parts[0]          
+      //     match.text = (parts[1] || parts[0]).trim();
+      //     match.url = ''
+      //   }
+      // });
+
+
     });
 
   eleventyConfig.addFilter("markdownify", (string) => {
@@ -45,10 +88,6 @@ module.exports = function (eleventyConfig) {
 
   // Will populate the contents of 'notes' with things like backlinks.
   eleventyConfig.addCollection("notes", function (collectionAPI) {
-    // let notes = collectionAPI.getFilteredByGlob([
-    //   "src/notes/**/*.md",
-    //   "index.md",
-    // ]);
 
     let tag = "note";
     let notes = collectionAPI.getFilteredByTag(tag);
@@ -72,8 +111,9 @@ module.exports = function (eleventyConfig) {
     return notes;
   });
 
+
   eleventyConfig.addPassthroughCopy("assets");
-  eleventyConfig.addPassthroughCopy(`notes/_resources`);
+  eleventyConfig.addPassthroughCopy('src/notes/public/_resources');
 
   return {
     useGitIgnore: false,
