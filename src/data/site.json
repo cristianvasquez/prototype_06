@@ -1,6 +1,6 @@
 {
-  "title": "Jardin",
-  "desc": "El jardin de Cristian",
+  "title": "Sample website",
+  "desc": "A demo",
   "author": "Cristian",
-  "baseurl": "https://jardin.cristianvasquez.me"
+  "baseurl": "http://localhost:8080"
 }

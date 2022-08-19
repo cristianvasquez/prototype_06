@@ -1,8 +1,3 @@
----
-layout: default
----
-# Hello everybody :)
+# Demos
 
-This is the home page. It is just a markdown
-
-[Go to notes!](notes/public)
+* [Converting some Media-Wiki markdown into HTML](notes)

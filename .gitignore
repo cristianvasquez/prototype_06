@@ -1,5 +1,4 @@
-dist
 node_modules
-_drafts
+.idea/
+playground
 output
-public-garden

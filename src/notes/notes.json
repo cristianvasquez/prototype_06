@@ -1,4 +1,4 @@
 {
-  "layout": "note.html",
-  "tags": "note"
+  "layout": "note-layout",
+  "type": "note"
 }

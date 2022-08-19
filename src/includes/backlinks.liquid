@@ -1,0 +1,8 @@
+{% if backlinks.length > 0 %}
+    <p>Backlinks</p>
+    <ul>
+        {% for link in backlinks %}
+            <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+        {% endfor %}
+    </ul>
+{% endif %}

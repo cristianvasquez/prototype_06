@@ -1,0 +1,7 @@
+<p>All notes</p>
+
+<ul>
+    {%- for current in collections.notes -%}
+        <li><a href="{{ current.url }}">{{ current.data.title }}</a></li>
+    {% endfor %}
+</ul>

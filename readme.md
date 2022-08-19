@@ -1,6 +1,4 @@
-# El jardin
-
-This animal publishes Obsidian vaults using eleventy.
+# Simple Wikilink note publisher
 
 1. Install the necessary dependencies
 
@@ -8,11 +6,7 @@ This animal publishes Obsidian vaults using eleventy.
 yarn install
 ```
 
-1. Create symbolic links for each Obsidian vault in ./src/notes
-
-```sh
-ln -s source_vault ./src/notes/public
-```
+1. Somehow put your notes in `./src/notes`
 
 1. Run eleventy
 
@@ -25,9 +19,3 @@ or
 ```sh
 eleventy --output=output --serve
 ```
-
-## Caution
-
-Don't use:
-
-'?', '&', '#', in the titles. 

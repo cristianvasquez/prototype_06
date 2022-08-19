@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% include head %}
+    <link rel="stylesheet" href="/assets/style.css"/>
+</head>
+
+<body>
+
+<div>{{ content }}</div>
+{% include backlinks %}
+{% include allnotes %}
+<footer>
+    <small>This is the footer of {{ site.title }}</small>
+</footer>
+</body>
+
+</html>
