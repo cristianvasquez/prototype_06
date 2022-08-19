@@ -1,4 +1,4 @@
-# Simple Wikilink note publisher
+# Simple Wikilink-enabled markdown publisher
 
 1. Install the necessary dependencies
 
